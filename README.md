@@ -1,4 +1,4 @@
-# LTERRC Simulator
+# LTE RRC Simulator
 
 This project simulates the **Radio Resource Control (RRC)** signaling process in LTE networks. It focuses on simulating communication between **User Equipment (UE)** and **Network** using key RRC messages, including the connection request, connection setup, and connection release procedures. The project is implemented in **C++** and includes data logging using text files and PCAP files for packet capture.
 
