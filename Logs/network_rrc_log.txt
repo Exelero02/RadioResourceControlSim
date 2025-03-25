@@ -1,5 +1,5 @@
-[2025-03-25 23:50:27] Network RRC Layer initialized
-[2025-03-25 23:50:27] [UE → Network] Received RRCConnectionRequest
-[2025-03-25 23:50:28] [Network → UE] Sending RRCConnectionSetup
-[2025-03-25 23:50:29] [UE → Network] Received RRCConnectionComplete
-[2025-03-25 23:50:30] [Network → UE] Sending RRCRelease
+[2025-03-26 00:09:19] Network RRC Layer initialized
+[2025-03-26 00:09:19] [UE → Network] Received RRCConnectionRequest
+[2025-03-26 00:09:20] [Network → UE] Sending RRCConnectionSetup
+[2025-03-26 00:09:21] [UE → Network] Received RRCConnectionComplete
+[2025-03-26 00:09:22] [Network → UE] Sending RRCRelease

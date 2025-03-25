@@ -1,3 +1,13 @@
+/**
+ * @class UeRrc
+ * @brief Implements UE-side RRC protocol state machine
+ *
+ * Models 3GPP TS 36.331 RRC states:
+ * - RRC_IDLE
+ * - RRC_CONNECTING
+ * - RRC_CONNECTED
+ */
+
 #include "UeRrc.hpp"
 #include <iostream>
 

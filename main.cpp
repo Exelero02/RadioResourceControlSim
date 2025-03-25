@@ -1,3 +1,15 @@
+/**
+ * @file main.cpp
+ * @brief Main simulation of LTE RRC protocol exchange
+ *
+ * Simulates the complete RRC connection lifecycle between UE and Network:
+ * 1. RRC Connection Request
+ * 2. RRC Connection Setup
+ * 3. RRC Connection Complete
+ * 4. RRC Release
+ */
+
+
 #include <iostream>
 #include <thread>
 #include "UeRrc.hpp"

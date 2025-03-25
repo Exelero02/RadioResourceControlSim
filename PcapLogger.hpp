@@ -1,3 +1,11 @@
+/**
+ * @class PcapLogger
+ * @brief Handles packet capture (PCAP) logging for protocol analysis
+ *
+ * Creates Wireshark-compatible packet captures of RRC protocol messages.
+ * Uses DLT_RAW link type for simplicity in simulation environment.
+ */
+
 #pragma once
 #include <pcap.h>
 #include <vector>
