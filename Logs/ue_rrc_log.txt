@@ -1,0 +1,5 @@
+[2025-03-25 23:50:27] UE RRC Layer initialized (State: IDLE)
+[2025-03-25 23:50:27] [UE → Network] sent RRCConnectionRequest
+[2025-03-25 23:50:28] [Network → UE] Received RRCConnectionSetup
+[2025-03-25 23:50:29] [UE → Network] sent RRCConnectionComplete
+[2025-03-25 23:50:30] [Network → UE] RRC Release received, back to IDLE

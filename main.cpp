@@ -2,8 +2,11 @@
 #include <thread>
 #include "UeRrc.hpp"
 #include "NetworkRrc.hpp"
+// #include <pcap.h>
 
 int main() {
+
+
     UeRrc ue;
     NetworkRrc network;
 
@@ -38,4 +41,19 @@ int main() {
 
     std::cout << "\nSimulation complete. Check Logs/ for details.\n";
     return 0;
+
+
+    //    char errbuf[PCAP_ERRBUF_SIZE];
+//    pcap_if_t* all_devices;
+//
+//    if (pcap_findalldevs(&all_devices, errbuf) == -1)
+//    {
+//        std::cerr << "npcap not found!" << errbuf << std::endl;
+//    }
+//    else
+//    {
+//        std::cout << "npcap installed successfully" << std::endl;
+//        pcap_freealldevs(all_devices);
+//    }
+
 }

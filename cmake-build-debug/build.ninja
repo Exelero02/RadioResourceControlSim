@@ -52,18 +52,28 @@ build cmake_object_order_depends_target_Analyzer: phony || CMakeFiles/Analyzer.d
 build CMakeFiles/Analyzer.dir/main.cpp.obj: CXX_COMPILER__Analyzer_unscanned_Debug C$:/Users/ALBERTUS/CLionProjects/Analyzer/main.cpp || cmake_object_order_depends_target_Analyzer
   DEP_FILE = CMakeFiles\Analyzer.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Program Files/Npcap/Include"
   OBJECT_DIR = CMakeFiles\Analyzer.dir
   OBJECT_FILE_DIR = CMakeFiles\Analyzer.dir
 
 build CMakeFiles/Analyzer.dir/UeRrc.cpp.obj: CXX_COMPILER__Analyzer_unscanned_Debug C$:/Users/ALBERTUS/CLionProjects/Analyzer/UeRrc.cpp || cmake_object_order_depends_target_Analyzer
   DEP_FILE = CMakeFiles\Analyzer.dir\UeRrc.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Program Files/Npcap/Include"
   OBJECT_DIR = CMakeFiles\Analyzer.dir
   OBJECT_FILE_DIR = CMakeFiles\Analyzer.dir
 
 build CMakeFiles/Analyzer.dir/NetworkRrc.cpp.obj: CXX_COMPILER__Analyzer_unscanned_Debug C$:/Users/ALBERTUS/CLionProjects/Analyzer/NetworkRrc.cpp || cmake_object_order_depends_target_Analyzer
   DEP_FILE = CMakeFiles\Analyzer.dir\NetworkRrc.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Program Files/Npcap/Include"
+  OBJECT_DIR = CMakeFiles\Analyzer.dir
+  OBJECT_FILE_DIR = CMakeFiles\Analyzer.dir
+
+build CMakeFiles/Analyzer.dir/PcapLogger.cpp.obj: CXX_COMPILER__Analyzer_unscanned_Debug C$:/Users/ALBERTUS/CLionProjects/Analyzer/PcapLogger.cpp || cmake_object_order_depends_target_Analyzer
+  DEP_FILE = CMakeFiles\Analyzer.dir\PcapLogger.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Program Files/Npcap/Include"
   OBJECT_DIR = CMakeFiles\Analyzer.dir
   OBJECT_FILE_DIR = CMakeFiles\Analyzer.dir
 
@@ -75,9 +85,9 @@ build CMakeFiles/Analyzer.dir/NetworkRrc.cpp.obj: CXX_COMPILER__Analyzer_unscann
 #############################################
 # Link the executable Analyzer.exe
 
-build Analyzer.exe: CXX_EXECUTABLE_LINKER__Analyzer_Debug CMakeFiles/Analyzer.dir/main.cpp.obj CMakeFiles/Analyzer.dir/UeRrc.cpp.obj CMakeFiles/Analyzer.dir/NetworkRrc.cpp.obj
+build Analyzer.exe: CXX_EXECUTABLE_LINKER__Analyzer_Debug CMakeFiles/Analyzer.dir/main.cpp.obj CMakeFiles/Analyzer.dir/UeRrc.cpp.obj CMakeFiles/Analyzer.dir/NetworkRrc.cpp.obj CMakeFiles/Analyzer.dir/PcapLogger.cpp.obj | C$:/Program$ Files/Npcap/Lib/x64/wpcap.lib
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = "C:/Program Files/Npcap/Lib/x64/wpcap.lib"  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Analyzer.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

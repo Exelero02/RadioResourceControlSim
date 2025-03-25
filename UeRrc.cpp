@@ -17,6 +17,7 @@ void UeRrc::sendRrcConnectionRequest() {
         state = RrcState::RRC_CONNECTING;
         logFile << "[" << getCurrentTimestamp() << "] [UE → Network] sent RRCConnectionRequest\n";
         std::cout << "Sent RRCConnectionRequest\n";
+        pcapLogger.logPacket({0x40, 0x12}, "RRC Connection Request");
     }
 }
 
@@ -33,6 +34,7 @@ void UeRrc::sendRrcConnectionComplete() {
         logFile << "[" << getCurrentTimestamp() << "] [UE → Network] sent RRCConnectionComplete\n";
         logFile.flush();
         std::cout << "Sent RRCConnectionComplete\n";
+        pcapLogger.logPacket({0x43, 0x34}, "RRC Connection Complete");
     }
 }
 void UeRrc::receiveRrcRelease() {

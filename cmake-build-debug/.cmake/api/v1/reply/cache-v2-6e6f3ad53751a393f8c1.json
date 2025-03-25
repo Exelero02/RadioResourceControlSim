@@ -1290,6 +1290,54 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "PCAP_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for PCAP."
+				}
+			],
+			"type" : "PATH",
+			"value" : "PCAP_DIR-NOTFOUND"
+		},
+		{
+			"name" : "PCAP_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/Program Files/Npcap/Include"
+		},
+		{
+			"name" : "PCAP_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "C:/Program Files/Npcap/Lib/x64/wpcap.lib"
+		},
+		{
+			"name" : "PCAP_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Npcap install directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "C:/Program Files/Npcap"
+		},
+		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
 			"properties" : 
 			[

@@ -28,6 +28,7 @@ void NetworkRrc::receiveRrcConnectionRequest() {
 void NetworkRrc::sendRrcConnectionSetup() {
     logFile << "[" << getCurrentTimestamp() << "] [Network → UE] Sending RRCConnectionSetup\n";
     std::cout << "Sent RRCConnectionSetup\n";
+    pcapLogger.logPacket({0x58, 0xA3}, "RRC Connection Setup");
 }
 
 void NetworkRrc::receiveRrcConnectionComplete() {
@@ -38,4 +39,5 @@ void NetworkRrc::receiveRrcConnectionComplete() {
 void NetworkRrc::sendRrcRelease() {
     logFile << "[" << getCurrentTimestamp() << "] [Network → UE] Sending RRCRelease\n";
     std::cout << "Sent RRCRelease\n";
+    pcapLogger.logPacket({0x60, 0x01}, "RRC Release");
 }
