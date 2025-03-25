@@ -1,18 +1,29 @@
 #pragma once
+
 #include <string>
 #include <fstream>
 
+enum class RrcState {
+    RRC_IDLE, RRC_CONNECTING, RRC_CONNECTED
+};
+
 class UeRrc {
 private:
-    std::string state = "RRC_IDLE";
+    RrcState state = RrcState::RRC_IDLE;
     std::ofstream logFile;
 
 public:
     UeRrc();
+
     ~UeRrc();
 
     void sendRrcConnectionRequest();
+
     void receiveRrcConnectionSetup();
+
     void sendRrcConnectionComplete();
-    const std::string& getState() const;
+
+    void receiveRrcRelease();
+
+    [[maybe_unused]] RrcState getState() const;
 };

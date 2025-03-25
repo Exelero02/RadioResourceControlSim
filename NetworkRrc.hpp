@@ -13,4 +13,5 @@ public:
     void receiveRrcConnectionRequest();
     void sendRrcConnectionSetup();
     void receiveRrcConnectionComplete();
+    void sendRrcRelease();
 };

@@ -1,9 +1,11 @@
 #include "UeRrc.hpp"
 #include <iostream>
 
+std::string getCurrentTimestamp();
+
 UeRrc::UeRrc() {
-    logFile.open("C:/Users/ALBERTUS/CLionProjects/Analyzer/Logs/network_rrc_log.txt");
-    logFile << "UE RRC Layer initialized (State: " << state << ")\n";
+    logFile.open("../Logs/ue_rrc_log.txt");
+    logFile << "[" << getCurrentTimestamp() << "] UE RRC Layer initialized (State: IDLE)\n";
 }
 
 UeRrc::~UeRrc() {
@@ -11,29 +13,36 @@ UeRrc::~UeRrc() {
 }
 
 void UeRrc::sendRrcConnectionRequest() {
-    if (state == "RRC_IDLE") {
-        state = "RRC_CONNECTING";
-        logFile << "[UE → Network] RRCConnectionRequest\n";
+    if (state == RrcState::RRC_IDLE) {
+        state = RrcState::RRC_CONNECTING;
+        logFile << "[" << getCurrentTimestamp() << "] [UE → Network] sent RRCConnectionRequest\n";
         std::cout << "Sent RRCConnectionRequest\n";
     }
 }
 
 void UeRrc::receiveRrcConnectionSetup() {
-    if (state == "RRC_CONNECTING") {
-        state = "RRC_CONNECTED";
-        logFile << "[Network → UE] RRCConnectionSetup\n";
+    if (state == RrcState::RRC_CONNECTING) {
+        state = RrcState::RRC_CONNECTED;
+        logFile << "[" << getCurrentTimestamp() << "] [Network → UE] Received RRCConnectionSetup\n";
         std::cout << "Received RRCConnectionSetup\n";
     }
 }
 
 void UeRrc::sendRrcConnectionComplete() {
-    if (state == "RRC_CONNECTED") {
-        logFile << "[UE → Network] RRCConnectionComplete\n";
+    if (state == RrcState::RRC_CONNECTED) {
+        logFile << "[" << getCurrentTimestamp() << "] [UE → Network] sent RRCConnectionComplete\n";
         logFile.flush();
         std::cout << "Sent RRCConnectionComplete\n";
     }
 }
+void UeRrc::receiveRrcRelease() {
+    if (state == RrcState::RRC_CONNECTED) {
+        state = RrcState::RRC_IDLE;
+        logFile << "[" << getCurrentTimestamp() << "] [Network → UE] RRC Release received, back to IDLE\n";
+        std::cout << "Received RRCRelease\n";
+    }
+}
 
-const std::string& UeRrc::getState() const {
+[[maybe_unused]] RrcState UeRrc::getState() const {
     return state;
 }

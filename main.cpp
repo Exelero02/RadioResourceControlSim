@@ -1,7 +1,7 @@
-#include "iostream"
+#include <iostream>
+#include <thread>
 #include "UeRrc.hpp"
 #include "NetworkRrc.hpp"
-#include <thread>
 
 int main() {
     UeRrc ue;
@@ -10,18 +10,31 @@ int main() {
     std::cout << "=== LTE RRC Simulator ===\n";
 
     // UE initiates connection
-    ue.sendRrcConnectionRequest();
-    network.receiveRrcConnectionRequest();
+    std::thread ueThread([&]() {
+        ue.sendRrcConnectionRequest();
+    });
 
-    // Network responds
-    std::this_thread::sleep_for(std::chrono::seconds(1));
-    network.sendRrcConnectionSetup();
+    // Network handles request
+    std::thread networkThread([&]() {
+        network.receiveRrcConnectionRequest();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        network.sendRrcConnectionSetup();
+    });
+
+    ueThread.join();
+    networkThread.join();
+
+    // UE processes setup
     ue.receiveRrcConnectionSetup();
-
-    // UE completes setup
     std::this_thread::sleep_for(std::chrono::seconds(1));
+
+    // UE sends completion, network receives
     ue.sendRrcConnectionComplete();
     network.receiveRrcConnectionComplete();
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    network.sendRrcRelease();
+    ue.receiveRrcRelease();
 
     std::cout << "\nSimulation complete. Check Logs/ for details.\n";
     return 0;

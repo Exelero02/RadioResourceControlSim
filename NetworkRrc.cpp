@@ -1,10 +1,18 @@
 #include "NetworkRrc.hpp"
 #include <iostream>
 #include <filesystem>
+#include <ctime>
+
+std::string getCurrentTimestamp() {
+    std::time_t now = std::time(nullptr);
+    char buf[100];
+    std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", std::localtime(&now));
+    return std::string(buf);
+}
 
 NetworkRrc::NetworkRrc() {
-    logFile.open("C:/Users/ALBERTUS/CLionProjects/Analyzer/Logs/network_rrc_log.txt");
-    logFile << "Network RRC Layer initialized\n";
+    logFile.open("../Logs/network_rrc_log.txt");
+    logFile << "[" << getCurrentTimestamp() << "] Network RRC Layer initialized\n";
 }
 
 NetworkRrc::~NetworkRrc() {
@@ -13,17 +21,21 @@ NetworkRrc::~NetworkRrc() {
 }
 
 void NetworkRrc::receiveRrcConnectionRequest() {
-    logFile << "[UE → Network] Received RRCConnectionRequest\n";
+    logFile << "[" << getCurrentTimestamp() << "] [UE → Network] Received RRCConnectionRequest\n";
     std::cout << "Received RRCConnectionRequest\n";
 }
 
 void NetworkRrc::sendRrcConnectionSetup() {
-    logFile << "[Network → UE] Sending RRCConnectionSetup\n";
+    logFile << "[" << getCurrentTimestamp() << "] [Network → UE] Sending RRCConnectionSetup\n";
     std::cout << "Sent RRCConnectionSetup\n";
 }
 
-
 void NetworkRrc::receiveRrcConnectionComplete() {
-    logFile << "[UE → Network] Received RRCConnectionComplete\n";
+    logFile << "[" << getCurrentTimestamp() << "] [UE → Network] Received RRCConnectionComplete\n";
     std::cout << "Received RRCConnectionComplete\n";
+}
+
+void NetworkRrc::sendRrcRelease() {
+    logFile << "[" << getCurrentTimestamp() << "] [Network → UE] Sending RRCRelease\n";
+    std::cout << "Sent RRCRelease\n";
 }
