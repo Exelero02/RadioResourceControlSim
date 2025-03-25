@@ -1,0 +1,4 @@
+Network RRC Layer initialized
+[UE → Network] Received RRCConnectionRequest
+[Network → UE] Sending RRCConnectionSetup
+[UE → Network] Received RRCConnectionComplete

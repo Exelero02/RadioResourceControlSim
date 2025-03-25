@@ -1,0 +1,4 @@
+UE RRC Layer initialized (State: RRC_IDLE)
+[UE → Network] RRCConnectionRequest
+[Network → UE] RRCConnectionSetup
+[UE → Network] RRCConnectionComplete
