@@ -41,8 +41,7 @@ lte-rrc-simulator/
 ### Building
 ```bash
 # Clone repository
-git clone https://github.com/Exelero02/RadioResourceControlSim.git
-cd lte-rrc-simulator
+git clone https://github.com/Exelero02/RadioResourceControlSim
 
 # Build with CMake
 mkdir build && cd build
